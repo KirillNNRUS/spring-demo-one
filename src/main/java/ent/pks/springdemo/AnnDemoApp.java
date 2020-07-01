@@ -11,8 +11,6 @@ public class AnnDemoApp {
 //        context.close();
 
         SomeService someService = context.getBean("someService", SomeService.class);
-        System.out.println(someService.map.toString());
-        someService.read("SECOND", "It is text");
-        System.out.println("2");
+        someService.read("FIRST", "It is text");
     }
 }

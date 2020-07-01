@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.toMap;
 
 @Service
 public class SomeService {
-    public final Map<SomeEnum, SomeInterface> map;
+    private final Map<SomeEnum, SomeInterface> map;
     private SomeInterface someInterface;
 
     @Autowired
