@@ -11,6 +11,6 @@ public class AnnDemoApp {
 //        context.close();
 
         SomeService someService = context.getBean("someService", SomeService.class);
-        someService.read("FIRST", "It is text");
+        someService.read("THIRD", "It is text");
     }
 }

@@ -11,16 +11,17 @@ import static java.util.stream.Collectors.toMap;
 
 @Service
 public class SomeService {
-    private final Map<SomeEnum, SomeInterface> map;
-    private SomeInterface someInterface;
+    private final Map<SomeEnum, SomeAdaptor> map;
+    private SomeAdaptor someAdaptor;
+
 
     @Autowired
-    public SomeService(List<SomeInterface> list) {
-        this.map = list.stream().collect(toMap(SomeInterface::someEnum, identity()));
+    public SomeService(List<SomeAdaptor> list) {
+        this.map = list.stream().collect(toMap(SomeAdaptor::someEnum, identity()));
     }
 
     public void read(String name, String text) {
-        someInterface = map.get(SomeEnum.valueOf(name));
-        someInterface.someMethod(text);
+        someAdaptor = map.get(SomeEnum.valueOf(name));
+        someAdaptor.someInterface().someMethod("yyy");
     }
 }
